@@ -1,0 +1,26 @@
+version: '3.9'
+
+networks:
+  dev_network:
+
+services:
+  db:
+    image: postgres:16.1-alpine3.19
+    ports: 
+      - "5431:5432"
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_DB: ${PG_DB}
+      PG_HOST: "db"
+      PG_PORT: "5432"

@@ -1,0 +1,68 @@
+@baseUrl = http://localhost:8000
+
+GET {{baseUrl}}/advertisements/
+Content-Type: application/json
+Authorization: 6056476c-12d3-4394-b69b-e93024ccb69a
+
+###
+POST {{baseUrl}}/advertisements/
+Content-Type: application/json
+Authorization: 6056476c-12d3-4394-b69b-e93024ccb69a
+
+{
+    "title": "sample title",
+    "description": "sample description"
+}
+
+###
+PATCH {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+Authorization: 6056476c-12d3-4394-b69b-e93024ccb69a
+
+{
+    "description": "sample patched description"
+}
+
+###
+DELETE {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+Authorization: 6056476c-12d3-4394-b69b-e93024ccb69a
+
+###
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+    "username": "username",
+    "password": "pAssword1"
+}
+
+###
+PATCH {{baseUrl}}/users/
+Content-Type: application/json
+Authorization: 6056476c-12d3-4394-b69b-e93024ccb69a
+
+
+{
+    "email": "sample@email.com"
+}
+
+###
+DELETE {{baseUrl}}/users/
+Content-Type: application/json
+Authorization: ce5f347b-9ed7-42a7-a04f-faeee0ac4fbe
+
+###
+GET {{baseUrl}}/users/
+Content-Type: application/json
+Authorization: 6056476c-12d3-4394-b69b-e93024ccb69a
+
+###
+POST {{baseUrl}}/login/
+Content-Type: application/json
+
+{
+    "username": "username",
+    "password": "pAssword1"
+}
+
